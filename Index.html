@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinay Investments</title>
+<meta name="description" content="Sinay Investments helps brands grow through affiliate marketing, while also offering Forex trading expertise and one-on-one trading coaching.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F8F7F4; --bg2: #F0EEE9; --white: #FFFFFF;
+  --text: #1A1A18; --muted: #6B6B65; --accent: #2A5C45;
+  --accent-light: #E8F0EB; --accent2: #C8A96E;
+  --border: rgba(26,26,24,0.1); --radius: 4px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; font-weight: 300; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(248,247,244,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 5vw; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.82rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { font-size: 0.82rem; font-weight: 500; color: var(--white) !important; background: var(--accent); padding: 0.5rem 1.25rem; border-radius: var(--radius); transition: opacity 0.2s !important; }
+.nav-cta:hover { opacity: 0.85; }
+
+/* HERO */
+.hero { min-height: 100vh; padding: 120px 5vw 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+.hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); padding: 0.35rem 0.85rem; border-radius: 2rem; margin-bottom: 1.5rem; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.5rem; }
+h1 em { font-style: italic; color: var(--accent); }
+.hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 440px; margin-bottom: 2.5rem; line-height: 1.8; }
+.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { display: inline-block; padding: 0.85rem 2rem; background: var(--accent); color: var(--white); font-size: 0.88rem; font-weight: 500; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; }
+.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn-secondary { display: inline-block; padding: 0.85rem 2rem; border: 1px solid var(--border); color: var(--text); font-size: 0.88rem; font-weight: 400; text-decoration: none; border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; }
+.btn-secondary:hover { border-color: var(--accent); background: var(--accent-light); }
+.hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.hero-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.hero-card:first-child { grid-column: 1 / -1; background: var(--accent); }
+.hero-card-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.hero-card:first-child .hero-card-label { color: rgba(255,255,255,0.7); }
+.hero-card-value { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; line-height: 1.2; }
+.hero-card:first-child .hero-card-value { color: var(--white); }
+.hero-card-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+.hero-card:first-child .hero-card-sub { color: rgba(255,255,255,0.6); }
+.pill { display: inline-block; font-size: 0.7rem; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 2rem; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); margin-top: 0.75rem; }
+
+/* SHARED */
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.2; }
+.section-desc { color: var(--muted); font-size: 1rem; max-width: 520px; margin-bottom: 3rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+
+/* SERVICES */
+.services { background: var(--white); padding: 6rem 5vw; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.service-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s, transform 0.2s; }
+.service-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.service-card.featured { background: var(--accent); border-color: var(--accent); }
+.service-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 400; color: var(--accent2); line-height: 1; margin-bottom: 1rem; }
+.service-card.featured .service-num { color: rgba(200,169,110,0.8); }
+.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.75rem; }
+.service-card.featured h3 { color: var(--white); }
+.service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+.service-card.featured p { color: rgba(255,255,255,0.75); }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.service-tag { font-size: 0.72rem; font-weight: 500; padding: 0.25rem 0.65rem; border-radius: 2rem; background: var(--accent-light); color: var(--accent); }
+.service-card.featured .service-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+
+/* AFFILIATE */
+.affiliate { padding: 6rem 5vw; background: var(--bg2); }
+.how-steps { display: flex; flex-direction: column; gap: 2rem; }
+.how-step { display: flex; gap: 1.25rem; align-items: flex-start; }
+.step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: var(--white); font-size: 0.8rem; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content h4 { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.step-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+.aside-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+.aside-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem; }
+.aside-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.75; }
+.aside-stat { border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 1.25rem; }
+.aside-stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); }
+.aside-stat-label { font-size: 0.8rem; color: var(--muted); }
+
+/* TRADING */
+.trading { padding: 6rem 5vw; background: var(--white); }
+.trading-intro p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.stat-box { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+.stat-box-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); line-height: 1; }
+.stat-box-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.4; }
+.myfxbook-note { margin-top: 1.25rem; padding: 0.85rem 1.25rem; background: var(--accent-light); border-radius: 8px; border-left: 3px solid var(--accent); font-size: 0.82rem; color: var(--accent); font-weight: 400; }
+.process-row { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.process-step { padding: 0.85rem 1rem; text-align: center; background: var(--white); border-right: 1px solid var(--border); }
+.process-step:last-child { border-right: none; }
+.process-step-label { font-size: 0.72rem; font-weight: 500; color: var(--accent); letter-spacing: 0.05em; }
+.process-step-desc { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+.strategy-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.strategy-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem; }
+.strategy-steps { display: flex; flex-direction: column; gap: 1.25rem; }
+.strategy-step { display: flex; gap: 1rem; align-items: flex-start; }
+.strategy-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; margin-top: 7px; }
+.strategy-step h4 { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.2rem; }
+.strategy-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+/* COACHING */
+.coaching { padding: 6rem 5vw; background: var(--bg2); }
+.coaching-intro p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+.coaching-points { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.coaching-point { display: flex; gap: 1rem; align-items: flex-start; }
+.coaching-point-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.65rem; font-weight: 600; color: var(--accent); line-height: 1.2; text-align: center; }
+.coaching-point h4 { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.2rem; }
+.coaching-point p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+.coaching-aside { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.coaching-aside h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.5rem; }
+.fxl-tag { display: inline-block; font-size: 0.72rem; font-weight: 500; background: var(--accent-light); color: var(--accent); padding: 0.2rem 0.65rem; border-radius: 2rem; margin-bottom: 1rem; }
+.coaching-aside p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+.journey-steps { display: flex; flex-direction: column; margin-top: 1.5rem; }
+.journey-step { display: flex; gap: 1rem; align-items: flex-start; padding: 0.75rem 0; border-top: 1px solid var(--border); }
+.journey-num { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--accent2); flex-shrink: 0; width: 20px; }
+.journey-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; padding-top: 2px; }
+
+/* ABOUT */
+.about { padding: 6rem 5vw; background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; }
+.about-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; background: var(--bg2); display: flex; align-items: center; justify-content: center; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-photo-placeholder { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem; line-height: 1.6; }
+.about-text p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.8; }
+.about-highlights { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.highlight { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; }
+.highlight::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; }
+.about-quote { background: var(--bg); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 2rem; margin-top: 2rem; }
+.about-quote blockquote { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; line-height: 1.6; font-style: italic; color: var(--text); margin-bottom: 1rem; }
+.about-author { font-size: 0.82rem; font-weight: 500; color: var(--accent); letter-spacing: 0.05em; }
+
+/* CONTACT */
+.contact { padding: 6rem 5vw; background: var(--accent); text-align: center; }
+.contact h2 { color: var(--white); margin-bottom: 1rem; }
+.contact p { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 440px; margin: 0 auto 2.5rem; }
+.btn-white { display: inline-block; padding: 0.9rem 2.5rem; background: var(--white); color: var(--accent); font-size: 0.88rem; font-weight: 500; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s; }
+.btn-white:hover { opacity: 0.9; }
+
+footer { background: var(--text); padding: 2rem 5vw; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.7); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-content > * { animation: fadeUp 0.6s ease both; }
+.hero-tag { animation-delay: 0.1s; } h1 { animation-delay: 0.2s; } .hero-desc { animation-delay: 0.3s; } .btn-group { animation-delay: 0.4s; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 100px; }
+  .hero-visual, .nav-links { display: none; }
+  .services-grid, .two-col, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Sinay <span>Investments</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#affiliate">Affiliate</a></li>
+    <li><a href="#trading">Trading</a></li>
+    <li><a href="#coaching">Coaching</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Based in Rotterdam, Netherlands</div>
+    <h1>Grow your brand.<br><em>Smarter.</em></h1>
+    <p class="hero-desc">Sinay Investments connects brands with high-quality audiences through affiliate marketing — while also offering Forex trading expertise and one-on-one trading coaching.</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn-primary">Work with us</a>
+      <a href="#services" class="btn-secondary">Our services</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-label">Primary focus</div>
+      <div class="hero-card-value">Affiliate Marketing</div>
+      <div class="hero-card-sub">Performance-driven results</div>
+      <span class="pill">Revenue share · CPA · CPL</span>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Also active in</div>
+      <div class="hero-card-value">Forex Trading</div>
+      <div class="hero-card-sub">5+ years experience</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Education</div>
+      <div class="hero-card-value">1-on-1 Coaching</div>
+      <div class="hero-card-sub">From A to Z</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-tag">What we offer</div>
+    <h2>Three ways we create value</h2>
+    <p class="section-desc">From driving conversions for brands to teaching the next generation of Forex traders — here is what Sinay Investments does.</p>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="service-num">01</div>
+        <h3>Affiliate Marketing</h3>
+        <p>We promote your product or service to the right audience and get paid on results. No wasted budget — only performance that matters.</p>
+        <div class="service-tags">
+          <span class="service-tag">Revenue share</span>
+          <span class="service-tag">CPA</span>
+          <span class="service-tag">Lead generation</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Forex Trading</h3>
+        <p>Active trading across the FX markets since 2021. Technical and fundamental analysis combined with a disciplined, process-driven approach.</p>
+        <div class="service-tags">
+          <span class="service-tag">5+ years</span>
+          <span class="service-tag">Technical analysis</span>
+          <span class="service-tag">Risk management</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Trading Coaching</h3>
+        <p>Online one-on-one coaching for anyone who wants to learn Forex trading from scratch — all the way to building a profitable, personal strategy.</p>
+        <div class="service-tags">
+          <span class="service-tag">Online via calls</span>
+          <span class="service-tag">A to Z</span>
+          <span class="service-tag">Own strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATE MARKETING -->
+<section class="affiliate" id="affiliate">
+  <div class="section-inner">
+    <div class="section-tag">Affiliate Marketing</div>
+    <h2>Performance-based partnerships</h2>
+    <div class="two-col">
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>We join your program</h4>
+            <p>We apply to your affiliate or partner program and get familiar with your product, audience, and goals.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>We promote to the right people</h4>
+            <p>Using targeted channels, we bring your offer in front of an audience that is genuinely interested — not just anyone.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>You only pay for results</h4>
+            <p>Commission is earned on actual conversions, sign-ups or sales. No risk, no wasted spend on your end.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>We scale what works</h4>
+            <p>Once we find what converts, we double down and keep growing the partnership over time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="aside-card">
+        <h3>Why work with Sinay Investments?</h3>
+        <p>We are not a large agency with dozens of clients. We are selective, focused, and treat every partnership as if it were our own business.</p>
+        <p>Our background in Forex trading means we understand performance, risk, and what it takes to get results under pressure.</p>
+        <div class="aside-stat">
+          <div class="aside-stat-num">100%</div>
+          <div class="aside-stat-label">Performance-based — we only earn when you grow</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRADING -->
+<section class="trading" id="trading">
+  <div class="section-inner">
+    <div class="section-tag">Forex Trading</div>
+    <h2>A disciplined, process-driven trader</h2>
+    <div class="two-col">
+      <div class="trading-intro">
+        <p>I have been actively trading the Forex markets since 2021 — that is 5+ years of live market experience across major and minor currency pairs.</p>
+        <p>My approach combines technical and fundamental analysis. I work in a structured, process-oriented way: collect data, reflect, implement improvements, and repeat. No guessing — just systematic execution.</p>
+        <p style="font-size:0.78rem; color:var(--muted); margin-bottom:0.75rem; font-style:italic;">Based on tracked data since January 2025.</p>
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-box-num">33.73R</div>
+            <div class="stat-box-label">Total return (in R — risk units)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-num">34.2%</div>
+            <div class="stat-box-label">Win rate across all closed trades</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-num">1.81</div>
+            <div class="stat-box-label">Profit factor (gross wins / gross losses)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-num">5R</div>
+            <div class="stat-box-label">Max drawdown (in R — risk units)</div>
+          </div>
+        </div>
+        <div class="myfxbook-note">
+          A verified Myfxbook track record will be added here shortly.
+        </div>
+        <div class="process-row" style="margin-top:1.5rem;">
+          <div class="process-step">
+            <div class="process-step-label">Collect</div>
+            <div class="process-step-desc">Gather data</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-label">Reflect</div>
+            <div class="process-step-desc">Analyse results</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-label">Improve</div>
+            <div class="process-step-desc">Implement fixes</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-label">Repeat</div>
+            <div class="process-step-desc">Stay consistent</div>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-card">
+        <h3>My trading approach</h3>
+        <div class="strategy-steps">
+          <div class="strategy-step">
+            <div class="strategy-dot"></div>
+            <div>
+              <h4>HTF Analysis — Direction</h4>
+              <p>I start on the higher time frames to determine the overall market direction and bias before doing anything else.</p>
+            </div>
+          </div>
+          <div class="strategy-step">
+            <div class="strategy-dot"></div>
+            <div>
+              <h4>MTF and LTF — Key Levels</h4>
+              <p>I then drop down to medium and lower time frames to identify strong support and resistance levels worth trading around.</p>
+            </div>
+          </div>
+          <div class="strategy-step">
+            <div class="strategy-dot"></div>
+            <div>
+              <h4>Trade with the trend</h4>
+              <p>I only take trades that align with the higher time frame direction. Patience and discipline — no counter-trend trades.</p>
+            </div>
+          </div>
+          <div class="strategy-step">
+            <div class="strategy-dot"></div>
+            <div>
+              <h4>Technical and Fundamental</h4>
+              <p>Chart structure is the foundation, but macroeconomic events and fundamentals are always part of the decision making.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING -->
+<section class="coaching" id="coaching">
+  <div class="section-inner">
+    <div class="section-tag">Trading Coaching</div>
+    <h2>From zero to your own strategy</h2>
+    <div class="two-col">
+      <div class="coaching-intro">
+        <p>I coach traders from A to Z — from understanding the very basics all the way to building and executing a personal, profitable trading strategy.</p>
+        <p>Sessions take place online via video call. I guide each student through the theory, help them build their first strategy, and support them step by step on the road to becoming consistently profitable.</p>
+        <p>I do not teach a fixed strategy. Instead, I focus on developing the right trading mindset and framework — so each student can find their own approach and make it truly their own.</p>
+        <div class="coaching-points">
+          <div class="coaching-point">
+            <div class="coaching-point-icon">1:1</div>
+            <div>
+              <h4>Online, one-on-one sessions</h4>
+              <p>Personal coaching via video call — tailored to your level, pace, and goals.</p>
+            </div>
+          </div>
+          <div class="coaching-point">
+            <div class="coaching-point-icon">A-Z</div>
+            <div>
+              <h4>Complete beginner to trader</h4>
+              <p>No prior experience needed. We start from the beginning and go all the way through to live trading.</p>
+            </div>
+          </div>
+          <div class="coaching-point">
+            <div class="coaching-point-icon">mindset</div>
+            <div>
+              <h4>Mindset and your own strategy</h4>
+              <p>The goal is not to copy my trades — it is to develop your own thinking, approach and edge in the market.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="coaching-aside">
+        <h3>Part of ForexLibrary</h3>
+        <div class="fxl-tag">ForexLibrary Community</div>
+        <p>My coaching is done within the ForexLibrary (FXL) community — a structured Forex education program with a clear curriculum and a strong learning environment.</p>
+        <p>As a coach within FXL, I guide students through the course material and help them apply it in practice.</p>
+        <div class="journey-steps">
+          <div class="journey-step">
+            <div class="journey-num">1</div>
+            <div class="journey-text">Course theory — understanding the foundations of Forex trading</div>
+          </div>
+          <div class="journey-step">
+            <div class="journey-num">2</div>
+            <div class="journey-text">Building your first trading strategy from scratch</div>
+          </div>
+          <div class="journey-step">
+            <div class="journey-num">3</div>
+            <div class="journey-text">Testing, refining and making it your own</div>
+          </div>
+          <div class="journey-step">
+            <div class="journey-num">4</div>
+            <div class="journey-text">Trading live — on the road to consistent profitability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="foto.jpg" alt="Ayzo Sinay" onerror="this.parentElement.innerHTML='<div class=about-photo-placeholder>Upload foto.jpg to GitHub to show your photo here</div>'">
+      </div>
+      <div>
+        <div class="section-tag">About</div>
+        <h2>Hi, I'm Ayzo</h2>
+        <div class="about-text">
+          <p>I'm the founder of Sinay Investments, based in Rotterdam. I started trading the Forex markets in 2021 and have been active ever since — building experience, refining my process, and coaching others along the way.</p>
+          <p>I believe in doing things properly: structured thinking, honest results, and no shortcuts. Whether it's a trade, a coaching session, or an affiliate partnership — I treat everything as if it's my own business on the line.</p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight">5+ years of active Forex trading experience</div>
+          <div class="highlight">Trader coach within the ForexLibrary community</div>
+          <div class="highlight">Performance marketing and affiliate partnerships</div>
+          <div class="highlight">Based in Rotterdam, operating internationally</div>
+        </div>
+        <div class="about-quote">
+          <blockquote>"I only promote what I genuinely believe in. That's what makes the difference between an affiliate and a real partner."</blockquote>
+          <div class="about-author">— Ayzo Sinay, Founder of Sinay Investments</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-tag" style="color:rgba(255,255,255,0.6);">Let's talk</div>
+  <h2>Ready to work together?</h2>
+  <p>Whether you are a brand looking for an affiliate partner or someone who wants to learn Forex trading — get in touch and let's figure out how we can help each other.</p>
+  <a href="mailto:Sinayinvestments@outlook.com" class="btn-white">Sinayinvestments@outlook.com</a>
+</section>
+
+<footer>
+  <span>2025 Sinay Investments — Rotterdam, Netherlands</span>
+  <a href="mailto:Sinayinvestments@outlook.com">Sinayinvestments@outlook.com</a>
+</footer>
+
+</body>
+</html>
